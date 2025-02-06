@@ -1,0 +1,23 @@
+.digital-footprint-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    background-color: #e0ffff;
+}
+
+button {
+    padding: 12px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
