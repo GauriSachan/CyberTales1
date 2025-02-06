@@ -1,0 +1,30 @@
+.quiz-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffefd5;
+}
+
+.quiz-options button {
+    padding: 12px;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quiz-options button:hover {
+    background-color: #ff4500;
+}
+
+.quiz-feedback {
+    font-weight: bold;
+    margin-top: 20px;
+}
