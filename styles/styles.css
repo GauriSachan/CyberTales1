@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background-color: #fce4ec;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    padding: 20px;
+    color: white;
+    font-size: 1.5em;
+    border-bottom: 5px solid #ff6f61;
+}
+
+.animated-title {
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff6f61);
+    transform: scale(1.1);
+}
+
+button:active {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.safety-tips {
+    background-color: #ffcccb;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+.safety-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.safety-tips li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+footer {
+    background: #ff6f61;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+footer a {
+    color: yellow;
+    text-decoration: none;
+}
