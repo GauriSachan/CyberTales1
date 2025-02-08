@@ -29,7 +29,7 @@ let currentStoryIndex = 0;
 
 function loadStory() {
     const storyContainer = document.getElementById('storyContainer');
-    storyContainer.innerHTML = ''; // Clear any previous content
+    storyContainer.innerHTML = ''; // Clear previous content
 
     const story = storyData[currentStoryIndex];
     const questionElement = document.createElement('p');
@@ -52,7 +52,6 @@ function chooseOption(index, option, button) {
     const story = storyData[currentStoryIndex];
     const selectedOption = story.options[index];
 
-    // Display the outcome right next to the selected option
     let feedbackText = selectedOption.outcome;
 
     if (selectedOption.correct) {
@@ -61,10 +60,8 @@ function chooseOption(index, option, button) {
         feedbackText = `<span class="wrong">${feedbackText}</span>`;
     }
 
-    // Show the feedback message next to the selected option
     button.innerHTML = `${option.text} ${feedbackText}`;
 
-    // Proceed to the next story after a small delay
     setTimeout(() => {
         if (currentStoryIndex < storyData.length - 1) {
             currentStoryIndex++;
@@ -72,9 +69,19 @@ function chooseOption(index, option, button) {
         } else {
             document.getElementById("storyContainer").innerHTML = '<p>🎉 You have completed the interactive story! Stay safe online! 🎉</p>';
         }
-    }, 1500);  // Delay before moving to the next question
+    }, 1500);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadStory();  // Load the first story when the page is loaded
+    loadStory();
 });
+
+function continueStory(choice) {
+    let storyText = '';
+    if (choice === 'ignore') {
+        storyText = "You decide to ignore the message and report it. You feel safe and confident!";
+    } else if (choice === 'respond') {
+        storyText = "You respond back, but the situation escalates. It's better to ignore and report!";
+    }
+    document.getElementById('story-text').innerText = storyText;
+}

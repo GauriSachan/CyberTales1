@@ -1,11 +1,10 @@
 .parent-child-dashboard {
     text-align: center;
-    background-color: #fff;
+    background-color: #ffebcd;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     width: 400px;
-    background-color: #ffebcd;
 }
 
 .dashboard-container {

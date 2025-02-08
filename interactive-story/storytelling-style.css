@@ -1,3 +1,23 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.story-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    background-image: linear-gradient(to right, #ffb6c1, #ffcccb);
+}
+
 .story-box {
     background: #fff3cd;
     border: 2px solid #ffca28;
@@ -9,7 +29,13 @@
     font-size: 18px;
 }
 
-.choice-button {
+.story-character {
+    border-radius: 50%;
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.choice-button, button {
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
@@ -20,6 +46,14 @@
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+}
+
+button {
+    background-color: #ff6347;
+}
+
+button:hover {
+    background-color: #ff4500;
 }
 
 .choice-button:hover {
