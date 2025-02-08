@@ -136,11 +136,21 @@
         </div>
     </div>
 
+    <!-- Swoosh Sound -->
+    <audio id="swoosh-sound" src="swoosh.mp3" preload="auto"></audio>
+
     <script>
+        // Function to play the swoosh sound effect
+        function playSwooshSound() {
+            const swooshSound = document.getElementById("swoosh-sound");
+            swooshSound.play();
+        }
+
         // Function to toggle chatbot visibility
         function toggleChatbot() {
             const chatbot = document.getElementById("chatbot");
             chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+            playSwooshSound(); // Play swoosh sound when chatbot opens/closes
         }
 
         // Predefined chatbot responses
@@ -167,6 +177,7 @@
             setTimeout(() => {
                 chatBox.innerHTML += `<div class="message bot-message">${botResponse}</div>`;
                 chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
+                playSwooshSound(); // Play swoosh sound when chatbot responds
             }, 500);
 
             // Clear input field
