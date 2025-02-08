@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Tales - Interactive Storytelling</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cyber Tales - Interactive Story</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
 </head>
-<body>
-    <div class="story-container">
-        <h1>Interactive Story: Cyberbullying Adventure</h1>
-        <img src="https://via.placeholder.com/150" alt="Cartoon Character" class="story-character">
-        <p id="story-text">You're chatting with your friend online. Suddenly, someone you don't know sends you a mean message...</p>
-        <div class="choices">
-            <button onclick="continueStory('ignore')">Ignore the message</button>
-            <button onclick="continueStory('respond')">Respond to the message</button>
+<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+
+    <header>
+        <h1>📖 Cyber Safety Interactive Story</h1>
+        <p>Choose wisely and learn how to stay safe online!</p>
+    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clickable Card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+        <div class="card" onclick="window.location.href='destination.html'">
+            <img src="card.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>Cyber Safety Tips</h2>
+                <p>Click to learn how to stay safe online!</p>
+            </div>
         </div>
+
+    <main style="flex: 1;">
+        <div id="storyContainer" class="story-box"></div>
+        <div id="storyOutcome" class="outcome-box"></div>
+    </main>
+
+    <div style="text-align: center; padding: 20px;">
+        <button onclick="buttonClick('Shyamu saves Rajju.pdf')" class="animated-button">4-7yrs</button>
+        <button onclick="buttonClick('chippu.pdf')" class="animated-button">8-12yrs</button>
+        <button onclick="buttonClick('')" class="animated-button">13-15yrs</button>
     </div>
-    <script src="script.js"></script>
+
+    <footer style="text-align: center; padding: 10px; background: #e665bb; border-top: 2px solid #6b3737;">
+        <p>🔒 Stay safe, stay smart! 🔒</p>
+    </footer>
+
 </body>
 </html>

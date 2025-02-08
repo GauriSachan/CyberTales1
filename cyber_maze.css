@@ -1,0 +1,59 @@
+body {
+    background: #c3d84d;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+#gameContainer {
+    margin: auto;
+    width: 420px;
+    position: relative;
+}
+
+canvas {
+    background: #222;
+    border: 3px solid cyan;
+    border-radius: 10px;
+}
+
+#overlay {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#overlay h2 {
+    color: red;
+}
+
+#overlay button {
+    padding: 10px 20px;
+    background: limegreen;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#overlay button:hover {
+    background: darkgreen;
+}
+
+.safe-zone {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px lime;
+    }
+    to {
+        box-shadow: 0 0 20px lime;
+    }
+}

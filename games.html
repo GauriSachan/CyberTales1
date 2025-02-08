@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Safety Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="games.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>🎮 Cyber Tales - Play & Learn</h1>
+        <p>Choose a game and test your cyber safety skills!</p>
+        <p>Learn about online safety while having fun!</p>
+    </header>
+    
+    <main>
+        <div class="game-container">
+            <button onclick="window.location.href='cyber_maze.html'">🕵️‍♂️ Cyber Maze - Escape the Hacker</button>
+            <button onclick="startPhishingDetectives()">🔍 Phishing Detectives</button>
+            <button onclick="window.location.href='cyber_ninja.html'">🥷 Cyber Ninja - Password Battle</button>
+            <button onclick="startDigitalFootprint()">🚶‍♂️ Digital Footprint Quest</button>
+        </div>
+        <div id="gameArea" class="game-area"></div>
+    </main>
+    
+    <footer>
+        <p>Stay safe online! 🔒</p>
+    </footer>
+</body>
+</html>

@@ -13,8 +13,8 @@
         <p>Fun and interactive learning for online safety!</p>
     </header>
     
-    <!-- Cyber Buddy Mascot -->
-    <div id="mascot">
+    <!-- Cyber Buddy Mascot with Animation -->
+    <div id="mascot" class="animate-mascot">
         <img src="mascot.png" alt="Cyber Buddy">
         <p id="mascot-text">Hello! I'm Cyber Buddy, here to help you stay safe online!</p>
     </div>
@@ -23,24 +23,35 @@
         <section class="feature">
             <h2>Interactive Stories</h2>
             <p>Engage in cyber safety adventures!</p>
-            <button onclick="startStoryMode()">Start Story</button>
+            <button onclick="startStoryMode()" class="animated-button">Start Story</button>
+            <div id="story-content" class="hidden">
+                <p><strong>Chapter 1: The Mystery Message</strong></p>
+                <p>One day, Alex received a strange message from an unknown number saying, "Click this link to win a prize!" What should Alex do?</p>
+                <button onclick="chooseOption('ignore')">Ignore the Message</button>
+                <button onclick="chooseOption('click')">Click the Link</button>
+                
+                <div id="story-outcome"></div>
+            </div>
         </section>
 
         <section class="feature">
             <h2>Cyber Quiz Game</h2>
             <p>Test your cyber safety knowledge!</p>
-            <button onclick="startQuiz()">Play Quiz</button>
+            <button onclick="startQuiz()" class="animated-button">Play Quiz</button>
         </section>
 
         <section class="feature">
             <h2>AI Safety Chatbot</h2>
             <p>Ask me anything about online safety!</p>
-            <button onclick="startChatbot()">Chat Now</button>
+            <button onclick="startChatbot()" class="animated-button">Chat Now</button>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Cyber Tales | Stay Safe Online!</p>
+        <p>Follow us for more cyber safety tips!</p>
     </footer>
+
+    <audio id="button-sound" src="sounds/button-click.mp3"></audio>
 </body>
 </html>
