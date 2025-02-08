@@ -1,6 +1,178 @@
-<div class="chatbot-container">
-    <h2>Cyber Safety Chatbot</h2>
-    <div id="chat-box" class="chat-box"></div>
-    <input type="text" id="user-input" placeholder="Ask me a cyber safety question..." class="chat-input"/>
-    <button onclick="getChatResponse()" class="chatbot-button">Ask</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Safety Chatbot</title>
+    <style>
+        /* Chatbot Avatar (Centered at Bottom) */
+        .chatbot-avatar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Adjust size */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .chatbot-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        /* Chatbot Container */
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: none;
+        }
+
+        /* Chatbot Header */
+        .chatbot-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            color: #2c3e50;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 22px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Chat Box */
+        .chat-box {
+            height: 300px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        /* Chat Input */
+        .chat-input-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        /* Chat Button */
+        .chatbot-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .chatbot-button:hover {
+            background: #2980b9;
+        }
+
+        /* Message Styling */
+        .message {
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #3498db;
+            color: white;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background: #ecf0f1;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chatbot Avatar (Centered at Bottom) -->
+    <img src="chatbot.png" alt="Chatbot Avatar" class="chatbot-avatar" onclick="toggleChatbot()">
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            Cyber Safety Chatbot
+            <span class="close-btn" onclick="toggleChatbot()">×</span>
+        </div>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Ask me a cyber safety question..." class="chat-input"/>
+            <button onclick="getChatResponse()" class="chatbot-button">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            const chatbot = document.getElementById("chatbot");
+            chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+        }
+
+        // Predefined chatbot responses
+        const chatbotResponses = {
+            "how can i create a strong password?": "Use at least 12 characters with a mix of letters, numbers, and special symbols.",
+            "should i use the same password everywhere?": "No, use different passwords for different accounts to stay safe.",
+            "what is phishing?": "Phishing is a cyber attack where scammers trick you into giving away personal information.",
+            "is public wifi safe?": "Public WiFi is risky. Always use a VPN when connecting to public networks.",
+            "how do i update my software?": "Regularly check for updates on your operating system and apps to stay protected."
+        };
+
+        function getChatResponse() {
+            let userInput = document.getElementById("user-input").value.toLowerCase();
+            let chatBox = document.getElementById("chat-box");
+
+            if (userInput.trim() === "") return;
+
+            // Add user message to chat
+            chatBox.innerHTML += `<div class="message user-message">${userInput}</div>`;
+
+            // Get bot response or default message
+            let botResponse = chatbotResponses[userInput] || "I'm not sure about that. Ask me something else!";
+            
+            setTimeout(() => {
+                chatBox.innerHTML += `<div class="message bot-message">${botResponse}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
+            }, 500);
+
+            // Clear input field
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+
+</body>
+</html>
